@@ -1,0 +1,58 @@
+  ---
+  - summary: |
+      Фильтр по категории товаров из списка
+    requirement: |
+      При фильтрации отображаются ТОЛЬКО те товары, которые относятся к выбранной категории 
+    prerequisites: |
+      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    test-data: |
+      smartphones
+    steps:
+      - в списке "Category" выбираем "smartphones"
+    expected-result: |
+      Пользователю представлены только те товары, которые относятся к категории "smartphones"
+---
+  - summary: |
+      Снятие фильтра категории товаров из списка
+    requirement: |
+      При снятии фильтрации все товары категории
+    prerequisites:
+      - Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+      - в списке "Category" выставлена фильтрация по категории "smartphones"
+    test-data: |
+      Clear
+    steps:
+      - в списке "Category" снимаем выделение с выбранной категории // на практике это невыполнимый тест-кейс из-за бага и снятие можно реальзовать разными способами.
+    expected-result: |
+      Пользователю представлены только все товары магазина
+---
+  - summary: |
+      Фильтр по ключевому слову
+    requirement: |
+      При фильтрации отображаются ТОЛЬКО те товары, которые содержат "ключевое слово"
+    prerequisites: |
+      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    test-data: |
+      perfume
+    steps:
+      - в форме ввода "Search" ввести "perfume"
+    expected-result: |
+      Пользователю представлены только те товары в названии, которых присутствует ключевое слово "perfume"
+---
+ - summary: |
+      Добавляние товаров в корзину и просмотр товаров в корзине
+    requirement: |
+      При нажатии "add to cart" товар переносится в корзину
+    prerequisites: |
+      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+      Корзина покупателя пустая
+    test-data: |
+      iPhone9 => add to cart
+      iPhoneX => add to cart
+    steps:
+      - Нажатие "add to cart" в рамке товара "iPhone9"
+      - Нажатие "add to cart" в рамке товара "iPhoneX"
+      - Нажатие на гиперссылку "Cart"
+    expected-result: |
+      В корзине пользователя находится товары: "iPhone9" и "iPhoneX"
+---      
