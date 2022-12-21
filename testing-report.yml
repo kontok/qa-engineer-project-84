@@ -1,40 +1,40 @@
 ---
--summary: |
+- summary: |
       Фильтр по категории товаров из списка
     status: pass
 
--summary: |
+- summary: |
       Снятие фильтра категории товаров из списка
     status: fail
 
--summary: |
+- summary: |
       Фильтр по ключевому слову
     status: pass
 
--summary: |
+- summary: |
       Фильтр по диапазону стоимости товара
     status: fail
 
--summary: |
+- summary: |
       Фильтр с отрицательной стоимостью товара
     status: fail
 
--summary: |
+- summary: |
       Фильтр по цвету
     status: fail
 
--summary: |
+- summary: |
       Добавление товаров в корзину и просмотр товаров в корзине
     status: pass
 
--summary: |
+- summary: |
       Просмотр подробной информации о товаре
     status: fail
 
--summary: |
+- summary: |
       Добавление товаров в корзину из карточки товара
     status: pass
 
--summary: |
+- summary: |
       Редактирование количества товаров в корзине
     status: fail
