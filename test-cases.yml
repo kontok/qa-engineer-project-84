@@ -20,9 +20,9 @@
       - Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
       - в списке "Category" выставлена фильтрация по категории "smartphones"
     test-data: |
-      Clear
+      Пустая категория или "Clear"
     steps:
-      - в списке "Category" нажимаем "Clear"
+      - в списке "Category" нажимаем пустую категория или "Clear"
     expected-result: |
       Пользователю представлены все товары магазина
 
