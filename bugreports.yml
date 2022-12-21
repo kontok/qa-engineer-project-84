@@ -7,7 +7,7 @@
   steps-to-reproduce: |
     1. Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
     2. В списке "Category" выставлен фильтр по категории "smartphones"
-    3. В списке "Category" снимаем выделение нажатием "Clear"
+    3. В списке "Category" снимаем выделение нажатием ""
   expected-result: |
     Пользователю представлены все товары магазина
   actual-result: |
