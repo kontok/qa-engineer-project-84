@@ -16,7 +16,7 @@
     Снятие фильтра категории товаров из списка
   requirement: |
     При снятии фильтрации пользователю показываются все товары
-  prerequisites:
+  prerequisites: |
     - Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
     - в списке "Category" выставлена фильтрация по категории "smartphones"
   test-data: |
@@ -36,7 +36,7 @@
     perfume
   steps:
     - в форме ввода "Search" ввести "perfume"
-    expected-result: |
+  expected-result: |
     Пользователю представлены все товары в названии, которых присутствует ключевое слово "perfume"
 
 - summary: |
@@ -64,7 +64,7 @@
     To: -26
   steps:
     - в форме ввода "Price From - to:"  ввести 2 значения -42 и -26.
-  expected-result: |.
+  expected-result: |
     Пользователю не удастся совершить данное действие       
 
 - summary: |
@@ -77,7 +77,7 @@
     red
   steps:
     - в форме ввода "color" ввести значение "red".
-  expected-result: |.
+  expected-result: |
     Пользователю представлены все товары красного цвета
 
 - summary: |
