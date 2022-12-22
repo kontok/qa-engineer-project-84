@@ -1,147 +1,147 @@
 ---
 - summary: |
-      Фильтр по категории товаров из списка
-    requirement: |
-      При фильтрации пользователю показываются все товары, которые относятся к выбранной категории 
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      smartphones
-    steps:
-      - в списке "Category" выбираем "smartphones"
+    Фильтр по категории товаров из списка
+  requirement: |
+    При фильтрации пользователю показываются все товары, которые относятся к выбранной категории 
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    smartphones
+  steps:
+    - в списке "Category" выбираем "smartphones"
+  expected-result: |
+    Пользователю представлены только те товары, которые относятся к категории "smartphones"
+
+- summary: |
+    Снятие фильтра категории товаров из списка
+  requirement: |
+    При снятии фильтрации пользователю показываются все товары
+  prerequisites:
+    - Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    - в списке "Category" выставлена фильтрация по категории "smartphones"
+  test-data: |
+    Пустая категория или "Clear"
+  steps:
+    - в списке "Category" нажимаем пустую категория или "Clear"
+  expected-result: |
+    Пользователю представлены все товары магазина
+
+- summary: |
+    Фильтр по ключевому слову
+  requirement: |
+    При фильтрации пользователю показываются все товары, которые содержат "ключевое слово"
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    perfume
+  steps:
+    - в форме ввода "Search" ввести "perfume"
     expected-result: |
-      Пользователю представлены только те товары, которые относятся к категории "smartphones"
+    Пользователю представлены все товары в названии, которых присутствует ключевое слово "perfume"
 
 - summary: |
-      Снятие фильтра категории товаров из списка
-    requirement: |
-      При снятии фильтрации пользователю показываются все товары
-    prerequisites:
-      - Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-      - в списке "Category" выставлена фильтрация по категории "smartphones"
-    test-data: |
-      Пустая категория или "Clear"
-    steps:
-      - в списке "Category" нажимаем пустую категория или "Clear"
-    expected-result: |
-      Пользователю представлены все товары магазина
+    Фильтр по диапазону стоимости товара
+  requirement: |
+    При фильтрации пользователю показываются все товары, которые входят в диапазон выставленной стоимости 
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    From: 26
+    To: 42
+  steps:
+    - в форме ввода "Price From - to:"  ввести 2 значения 26 и 42.
+  expected-result: |
+    Пользователю представлены все товары стоимость, которых находится в диапазоне от 26 до 42       
 
 - summary: |
-      Фильтр по ключевому слову
-    requirement: |
-      При фильтрации пользователю показываются все товары, которые содержат "ключевое слово"
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      perfume
-    steps:
-      - в форме ввода "Search" ввести "perfume"
-    expected-result: |
-      Пользователю представлены все товары в названии, которых присутствует ключевое слово "perfume"
+    Фильтр с отрицательной стоимостью товара
+  requirement: |
+    Недоступность ввода отрицательных чисел в форму "Price From - to:"
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    From: -42
+    To: -26
+  steps:
+    - в форме ввода "Price From - to:"  ввести 2 значения -42 и -26.
+  expected-result: |.
+    Пользователю не удастся совершить данное действие       
 
 - summary: |
-      Фильтр по диапазону стоимости товара
-    requirement: |
-      При фильтрации пользователю показываются все товары, которые входят в диапазон выставленной стоимости 
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      From: 26
-      To: 42
-    steps:
-      - в форме ввода "Price From - to:"  ввести 2 значения 26 и 42.
-    expected-result: |
-      Пользователю представлены все товары стоимость, которых находится в диапазоне от 26 до 42       
+    Фильтр по цвету
+  requirement: |
+    При фильтрации пользователю показываются все товары, выбранного цвета
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    red
+  steps:
+    - в форме ввода "color" ввести значение "red".
+  expected-result: |.
+    Пользователю представлены все товары красного цвета
 
 - summary: |
-      Фильтр с отрицательной стоимостью товара
-    requirement: |
-      Недоступность ввода отрицательных чисел в форму "Price From - to:"
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      From: -42
-      To: -26
-    steps:
-      - в форме ввода "Price From - to:"  ввести 2 значения -42 и -26.
-    expected-result: |.
-      Пользователю не удастся совершить данное действие       
-
-- summary: |
-      Фильтр по цвету
-    requirement: |
-      При фильтрации пользователю показываются все товары, выбранного цвета
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      red
-    steps:
-      - в форме ввода "color" ввести значение "red".
-    expected-result: |.
-      Пользователю представлены все товары красного цвета
-
-- summary: |
-      Добавление товаров в корзину и просмотр товаров в корзине
-    requirement: |
-      При нажатии кнопки "add to cart" товар переносится в корзину
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-      Корзина покупателя пустая
-    test-data: |
-      iPhone9 => add to cart
-      iPhoneX => add to cart
-    steps:
-      - Нажатие кнопки "add to cart" в рамке товара "iPhone9"
-      - Нажатие кнопки "add to cart" в рамке товара "iPhoneX"
-      - Нажатие на гиперссылку "Cart"
-    expected-result: |
-      В корзине пользователя находится товары: "iPhone9" и "iPhoneX"
+    Добавление товаров в корзину и просмотр товаров в корзине
+  requirement: |
+    При нажатии кнопки "add to cart" товар переносится в корзину
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    Корзина покупателя пустая
+  test-data: |
+    iPhone9 => add to cart
+    iPhoneX => add to cart
+  steps:
+    - Нажатие кнопки "add to cart" в рамке товара "iPhone9"
+    - Нажатие кнопки "add to cart" в рамке товара "iPhoneX"
+    - Нажатие на гиперссылку "Cart"
+  expected-result: |
+    В корзине пользователя находится товары: "iPhone9" и "iPhoneX"
   
 - summary: |
-      Просмотр подробной информации о товаре
-    requirement: |
-      При нажатии на гиперссылку товара пользователь может прочесть его полное описание
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-    test-data: |
-      iPhone X
-    steps:
-      - Нажатие гиперссылки в рамке товара "iPhone X"
-      - Просмотр "Description"
-    expected-result: |
-      Пользователю доступно для чтения полное описание товара "iPhone X"
+    Просмотр подробной информации о товаре
+  requirement: |
+    При нажатии на гиперссылку товара пользователь может прочесть его полное описание
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+  test-data: |
+    iPhone X
+  steps:
+    - Нажатие гиперссылки в рамке товара "iPhone X"
+    - Просмотр "Description"
+  expected-result: |
+    Пользователю доступно для чтения полное описание товара "iPhone X"
   
 - summary: |
-      Добавление товаров в корзину из карточки товара
-    requirement: |
-      В карточке товара при нажатии кнопки "add to cart" товар переносится в корзину
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-      Корзина покупателя пустая
-    test-data: |
-      iPhoneX
-    steps:
-      - Нажатие гиперссылки в рамке товара "iPhone X"
-      - Нажатие кнопки "add to cart"
-      - Нажатие на гиперссылку "Cart"
-    expected-result: |
-      В корзине пользователя находится товар: "iPhoneX"
+    Добавление товаров в корзину из карточки товара
+  requirement: |
+    В карточке товара при нажатии кнопки "add to cart" товар переносится в корзину
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    Корзина покупателя пустая
+  test-data: |
+    iPhoneX
+  steps:
+    - Нажатие гиперссылки в рамке товара "iPhone X"
+    - Нажатие кнопки "add to cart"
+    - Нажатие на гиперссылку "Cart"
+  expected-result: |
+    В корзине пользователя находится товар: "iPhoneX"
 
 - summary: |
-      Редактирование количества товаров в корзине
-    requirement: |
-      После добавления товара в корзину можно его редактировать количество
-    prerequisites: |
-      Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
-      Корзина покупателя пустая
-      Нажатие гиперссылки в рамке товара "iPhone X"
-      Нажатие кнопки "add to cart"
-    test-data: |
-      iPhoneX
-    steps:
-      - Нажатие на гиперссылку "Cart"
-      - Нажатие на гиперссылку с указанием количества товара
-      - Ввод в форму числа 3
-      - Нажатие кнопки "OK"
-    expected-result: |
-      В корзине пользователя находится товар: "iPhoneX" в количестве 3х единиц
+    Редактирование количества товаров в корзине
+  requirement: |
+    После добавления товара в корзину можно его редактировать количество
+  prerequisites: |
+    Открыта главная страница магазина (https://hexlet-products-store.vercel.app/)
+    Корзина покупателя пустая
+    Нажатие гиперссылки в рамке товара "iPhone X"
+    Нажатие кнопки "add to cart"
+  test-data: |
+    iPhoneX
+  steps:
+    - Нажатие на гиперссылку "Cart"
+    - Нажатие на гиперссылку с указанием количества товара
+    - Ввод в форму числа 3
+    - Нажатие кнопки "OK"
+  expected-result: |
+    В корзине пользователя находится товар: "iPhoneX" в количестве 3х единиц
