@@ -6,11 +6,11 @@ test-cases:
 
   - summary: |
       Снятие фильтра категории товаров из списка
-    Status: pass
+    status: pass
 
   - summary: |
       Фильтр по ключевому слову
-    Status: pass
+    status: pass
 
   - summary: |
       Фильтр по диапазону стоимости товара
